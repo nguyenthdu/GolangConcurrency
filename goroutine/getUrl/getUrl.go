@@ -26,7 +26,7 @@ func main() {
 	firstChanUrl := make(chan string)
 	secondChanUrl := make(chan string)
 	thirdChanUrl := make(chan string)
-	f, err := os.OpenFile("tutorial/lessions/goroutine/getUrl/saveUrl.txt", os.O_APPEND|os.O_WRONLY, os.ModeAppend)
+	f, err := os.OpenFile("goroutine/getUrl/saveUrl.txt", os.O_APPEND|os.O_WRONLY, os.ModeAppend)
 	if err != nil {
 		log.Println(err)
 		return
