@@ -1,7 +1,7 @@
 package main
 
 import (
-	"GolangConcurrency/ModelPubSub/pubsub"
+	"GolangConcurrency/modelPubSub/pubsub"
 	"fmt"
 	"strings"
 	"time"

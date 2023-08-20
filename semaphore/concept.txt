@@ -1,0 +1,23 @@
+Trong ngôn ngữ lập trình Go (Golang), "semaphore" là một cơ chế đồng bộ hóa
+ được sử dụng để quản lý truy cập đến tài nguyên chia sẻ hoặc đồng thời thực hiện một số lượng giới hạn các tác vụ.
+ Semaphore giúp đảm bảo rằng chỉ có một số lượng cố định các goroutine (đơn vị thực thi đồng thời trong Go)
+ được phép truy cập vào tài nguyên chia sẻ cùng một thời điểm.
+
+Trong Go, bạn có thể sử dụng gói sync để tạo và quản lý semaphore.
+Gói này cung cấp sync.Mutex để thực hiện khóa mutex và sync.WaitGroup để đợi cho các goroutine kết thúc.
+Để sử dụng semaphore trong Go, bạn có thể sử dụng một biến kiểu sync.WaitGroup kết hợp với Add(), Done() và Wait()
+để đảm bảo rằng tất cả các goroutine đã hoàn thành công việc của mình trước khi chương trình kết thúc.
+
+
+
+Cả semaphore và design pattern object pool đều liên quan đến việc quản lý và kiểm soát tài nguyên, nhưng chúng có mục đích và cách sử dụng khác nhau.
+
+Semaphore: Semaphore là một cơ chế đồng bộ hóa sử dụng để kiểm soát truy cập đồng thời đến tài nguyên chia sẻ hoặc để quản lý số lượng giới hạn các tác vụ đang được thực hiện đồng thời. Semaphore giúp đảm bảo rằng chỉ có một số lượng cố định các tác vụ được thực hiện đồng thời, từ đó giúp kiểm soát việc sử dụng tài nguyên và tránh các vấn đề như cạnh tranh (race conditions).
+
+Design Pattern Object Pool: Design pattern object pool là một mẫu thiết kế được sử dụng để quản lý và tái sử dụng các đối tượng đã được tạo trước đó thay vì tạo mới đối tượng mỗi khi cần. Mục tiêu của design pattern này là tối ưu hóa hiệu suất và sử dụng tài nguyên bằng cách giảm bớt việc tạo và hủy đối tượng thường xuyên.
+
+Mặc dù có một sự tương đồng trong việc quản lý tài nguyên và kiểm soát truy cập đồng thời, nhưng hai khái niệm này thường được sử dụng trong ngữ cảnh khác nhau:
+
+Semaphore thường được sử dụng để kiểm soát việc truy cập đồng thời đến tài nguyên, ví dụ như giới hạn số lượng luồng hoặc goroutine được thực thi cùng một thời điểm để tránh xung đột và cạnh tranh.
+Design pattern object pool thường được sử dụng để tối ưu hóa việc sử dụng lại các đối tượng đã tạo, giảm bớt chi phí tạo và hủy các đối tượng mới.
+Tóm lại, mặc dù cả semaphore và design pattern object pool đều liên quan đến quản lý tài nguyên, nhưng chúng có mục tiêu và cách sử dụng khác nhau trong lập trình.
